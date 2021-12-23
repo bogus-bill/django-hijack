@@ -121,7 +121,7 @@ class ReleaseUserView(
 ):
     raise_exception = True
 
-    success_url = settings.LOGOUT_REDIRECT_URL
+    success_url = settings.LOGOUT_REDIRECT_URL or "/"
 
     def test_func(self):
         return bool(self.request.session.get("hijack_history", []))
